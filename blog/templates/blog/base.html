@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title >Andrea's blog</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -12,6 +12,11 @@
     <body>
     <header class="page-header">
       <div class="container">
+      {% if user.is_authenticadet %}
+          <a href="{% url 'post_new' %}" class="top-menu">
+                    {% include './icons/file-earmark-plus.svg' %}
+          </a>
+      {% endif %}
           <h1><a href="/">Andrea's Blog</a></h1>
       </div>
     </header>
